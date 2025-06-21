@@ -1,4 +1,4 @@
-# makeat
+# Makeat
 
 ## Mockup (coming soon)
 
