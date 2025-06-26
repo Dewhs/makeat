@@ -28,7 +28,7 @@ fun MTextField(
     onValueChange: (String) -> Unit,
     hideContent: Boolean = false,
     keyboardType: KeyboardType = KeyboardType.Text,
-    squircleShape: Shape = SquircleShape(radius = 25.dp, cornerSmoothing = CornerSmoothing.Full),
+    shape: Shape = SquircleShape(radius = 25.dp, cornerSmoothing = CornerSmoothing.Full),
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -38,23 +38,24 @@ fun MTextField(
         if (label != null) Text(label, style = MaterialTheme.typography.bodyLarge)
 
         BasicTextField(
-        value = value,
-        onValueChange = onValueChange,
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.surface, squircleShape)
-            .border(
-                width = 2.dp,
-                color = MaterialTheme.colorScheme.onBackground,
-                shape = squircleShape
-            )
-            .padding(12.dp),
-        textStyle = MaterialTheme.typography.bodyMedium.copy(
-            color = MaterialTheme.colorScheme.onSurface
-        ),
-        cursorBrush = SolidColor(MaterialTheme.colorScheme.onSurface),
-        visualTransformation = if (hideContent) PasswordVisualTransformation() else VisualTransformation.None,
-        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
-        singleLine = true
-    )}
+            value = value,
+            onValueChange = onValueChange,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.surface, shape)
+                .border(
+                    width = 2.dp,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    shape = shape
+                )
+                .padding(12.dp),
+            textStyle = MaterialTheme.typography.bodyMedium.copy(
+                color = MaterialTheme.colorScheme.onSurface
+            ),
+            cursorBrush = SolidColor(MaterialTheme.colorScheme.onSurface),
+            visualTransformation = if (hideContent) PasswordVisualTransformation() else VisualTransformation.None,
+            keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
+            singleLine = true
+        )
+    }
 }

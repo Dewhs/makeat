@@ -12,7 +12,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.Dp
@@ -26,7 +25,7 @@ fun MCheckbox(
     onCheckedChange: ((Boolean) -> Unit)?,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
-    squircleShape: Shape = SquircleShape(radius = 25.dp, cornerSmoothing = CornerSmoothing.Full),
+    shape: Shape = SquircleShape(radius = 25.dp, cornerSmoothing = CornerSmoothing.Full),
     size: Dp = 24.dp
 ) {
     val colors = MaterialTheme.colorScheme
@@ -34,15 +33,14 @@ fun MCheckbox(
     Box(
         modifier = modifier
             .size(size)
-            .clip(squircleShape)
             .background(
                 color = if (checked) colors.primary else colors.surface,
-                shape = squircleShape
+                shape = shape
             )
             .border(
                 width = 2.dp,
                 color = colors.onBackground,
-                shape = squircleShape
+                shape = shape
             )
             .toggleable(
                 value = checked,
