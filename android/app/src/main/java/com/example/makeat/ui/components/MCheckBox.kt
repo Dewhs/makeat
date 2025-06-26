@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.Dp
@@ -50,13 +51,11 @@ fun MCheckbox(
             ),
         contentAlignment = Alignment.Center
     ) {
-        if (checked) {
-            Icon(
-                imageVector = Icons.Default.Check,
-                contentDescription = "Checked",
-                tint = colors.onPrimary,
-                modifier = Modifier.size(size * 0.8f)
-            )
-        }
+        Icon(
+            imageVector = Icons.Default.Check,
+            contentDescription = "Checked",
+            tint = if (checked) colors.onPrimary else Color.Transparent,
+            modifier = Modifier.size(size * 0.8f)
+        )
     }
 }
