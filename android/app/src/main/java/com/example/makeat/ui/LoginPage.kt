@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.foundation.text.BasicText
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -93,7 +92,7 @@ fun LoginPage(modifier: Modifier = Modifier) {
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 ), modifier = Modifier.fillMaxWidth()
             ) {
-                BasicText(
+                Text(
                     "Enter",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(vertical = 10.dp)
