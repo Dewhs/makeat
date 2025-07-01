@@ -1,5 +1,6 @@
 package com.example.makeat.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,7 +24,7 @@ import com.example.makeat.ui.components.MCheckbox
 import com.example.makeat.ui.components.MTextField
 
 @Composable
-fun LoginPage(modifier: Modifier = Modifier) {
+fun LoginPage(modifier: Modifier = Modifier, onLoginSuccess: () -> Unit) {
 
     val host = remember { mutableStateOf("") }
     val email = remember { mutableStateOf("") }
@@ -78,7 +79,7 @@ fun LoginPage(modifier: Modifier = Modifier) {
                 Text("I don't have an account", style = MaterialTheme.typography.bodyMedium)
             }
 
-            MButtonPrimary(text = "Enter", onClick = { TODO() /* Action login */ })
+            MButtonPrimary(text = "Enter", onClick = { onLoginSuccess() } )
         }
     }
 }

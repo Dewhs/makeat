@@ -9,7 +9,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.w3c.dom.Text
 import sv.lib.squircleshape.CornerSmoothing
 import sv.lib.squircleshape.SquircleShape
 
@@ -20,7 +19,7 @@ fun MButtonPrimary(
     modifier: Modifier = Modifier
 ) {
     Button(
-        onClick = { onClick },
+        onClick = { onClick() },
         shape = SquircleShape(
             radius = 25.dp,
             cornerSmoothing = CornerSmoothing.Full
