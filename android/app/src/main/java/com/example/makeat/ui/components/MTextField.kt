@@ -35,7 +35,7 @@ fun MTextField(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(5.dp)
     ) {
-        if (label != null) Text(label, style = MaterialTheme.typography.bodyLarge)
+        if (label != null) Text(label, style = MaterialTheme.typography.labelLarge)
 
         BasicTextField(
             value = value,

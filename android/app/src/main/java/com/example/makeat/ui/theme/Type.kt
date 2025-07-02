@@ -1,6 +1,5 @@
 package com.example.makeat.ui.theme
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -51,5 +50,18 @@ val Typography = Typography(
         fontFamily = fredokaFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
+    ),
+
+    labelLarge = TextStyle(
+        fontFamily = fredokaFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 18.sp,
+    ),
+
+    labelSmall = TextStyle(
+        fontFamily = fredokaFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+    ),
+
     )
-)
