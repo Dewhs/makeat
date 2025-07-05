@@ -15,14 +15,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import border
 import com.example.makeat.Plan
 import com.example.makeat.Profile
 import com.example.makeat.R
 import com.example.makeat.Recipes
 import com.example.makeat.Stock
-import topBorder
 
 data class Item<T : Any>(val name: String, val route: T, val icon: ImageVector)
 
@@ -40,7 +41,11 @@ fun MNavBar(navController: NavHostController, modifier: Modifier = Modifier) {
     )
 
     NavigationBar(
-        modifier = modifier.topBorder(MaterialTheme.colorScheme.outline, 5f),
+        modifier = modifier.border(
+            side = BorderSide.TOP,
+            width = 2.dp,
+            color = MaterialTheme.colorScheme.outline
+        ),
         containerColor = MaterialTheme.colorScheme.surface,
     ) {
         for (item in navItems) {
