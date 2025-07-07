@@ -19,7 +19,7 @@ fun MButtonPrimary(
     modifier: Modifier = Modifier
 ) {
     Button(
-        onClick = { onClick() },
+        onClick = onClick,
         shape = SquircleShape(
             radius = 25.dp,
             cornerSmoothing = CornerSmoothing.Full
