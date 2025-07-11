@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -18,8 +20,9 @@ import com.example.makeat.ui.ProfilePage
 import com.example.makeat.ui.RecipesPage
 import com.example.makeat.ui.StockPage
 import com.example.makeat.ui.components.MNavBar
+import com.example.makeat.ui.navigation.Routes
+import com.example.makeat.ui.navigation.bottomNavItems
 import com.example.makeat.ui.theme.MakeatTheme
-import kotlinx.serialization.Serializable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,27 +37,26 @@ class MainActivity : ComponentActivity() {
                 val currentDestination = navBackStackEntry?.destination
                 Scaffold(
                     bottomBar = {
-                        if (currentDestination?.route != Login::class.qualifiedName) {
-                            MNavBar(navController)
+                        if (currentDestination?.route != Routes.Login::class.qualifiedName) {
+                            MNavBar(navController, bottomNavItems)
                         }
-                    }
-                ) { innerPadding ->
+                    }) { innerPadding ->
                     NavHost(
                         navController = navController,
-                        startDestination = Login,
+                        startDestination = Routes.Login,
                         modifier = Modifier.padding(innerPadding)
                     ) {
-                        composable<Login> {
+                        composable<Routes.Login> {
                             LoginPage(onLoginSuccess = {
                                 navController.navigate(
-                                    Recipes
+                                    Routes.Recipes
                                 )
                             })
                         }
-                        composable<Recipes> { RecipesPage() }
-                        composable<Plan> { PlanPage() }
-                        composable<Stock> { StockPage() }
-                        composable<Profile> { ProfilePage() }
+                        composable<Routes.Recipes> { RecipesPage() }
+                        composable<Routes.Plan> { PlanPage() }
+                        composable<Routes.Stock> { StockPage() }
+                        composable<Routes.Profile> { ProfilePage() }
                     }
                 }
             }
@@ -62,25 +64,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Serializable
-object Login
-
-@Serializable
-object Recipes
-
-@Serializable
-object Plan
-
-@Serializable
-object Stock
-
-@Serializable
-object Profile
-
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    MakeatTheme {
-//        LoginPage()
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    MakeatTheme {
+        LoginPage(onLoginSuccess = {})
+    }
+}
