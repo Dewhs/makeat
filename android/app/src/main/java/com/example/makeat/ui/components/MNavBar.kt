@@ -29,15 +29,17 @@ fun MNavBar(
         ),
         containerColor = MaterialTheme.colorScheme.surface,
     ) {
+        val navBarItemColors = NavigationBarItemDefaults.colors(
+            indicatorColor = MaterialTheme.colorScheme.background,
+            selectedIconColor = MaterialTheme.colorScheme.primary,
+            selectedTextColor = MaterialTheme.colorScheme.primary,
+            unselectedIconColor = MaterialTheme.colorScheme.onBackground,
+            unselectedTextColor = MaterialTheme.colorScheme.onBackground
+        )
+
         for (item in navItems) {
             NavigationBarItem(
-                colors = NavigationBarItemDefaults.colors(
-                    indicatorColor = MaterialTheme.colorScheme.background,
-                    selectedIconColor = MaterialTheme.colorScheme.primary,
-                    selectedTextColor = MaterialTheme.colorScheme.primary,
-                    unselectedIconColor = MaterialTheme.colorScheme.onBackground,
-                    unselectedTextColor = MaterialTheme.colorScheme.onBackground
-                ),
+                colors = navBarItemColors,
                 icon = {
                     Icon(
                         item.icon.toImageVector(), item.label
