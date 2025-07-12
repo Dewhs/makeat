@@ -1,16 +1,15 @@
 package com.example.makeat.ui.navigation
 
-import com.example.makeat.R
-import com.example.makeat.utils.Drawable
+import com.example.makeat.ui.theme.MIcon
 
-data class NavItem(
-    val label: String, val route: Routes, val icon: Drawable
+class NavItem(
+    val label: String, val route: Routes, val icon: MIcon
 )
 
 val bottomNavItems = listOf(
-    NavItem("Recipes", Routes.Recipes, Drawable(R.drawable.chef_hat)),
-    NavItem("Plan", Routes.Plan, Drawable(R.drawable.calendar)),
-    NavItem("Stock", Routes.Stock, Drawable(R.drawable.box)),
-    NavItem("Profile", Routes.Profile, Drawable(R.drawable.user)),
+    NavItem("Recipes", Routes.Recipes, MIcon.ChefHat),
+    NavItem("Plan", Routes.Plan, MIcon.Calendar),
+    NavItem("Stock", Routes.Stock, MIcon.Box),
+    NavItem("Profile", Routes.Profile, MIcon.User),
 )
 

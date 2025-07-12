@@ -9,6 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -42,7 +44,7 @@ fun MNavBar(
                 colors = navBarItemColors,
                 icon = {
                     Icon(
-                        item.icon.toImageVector(), item.label
+                        ImageVector.vectorResource(item.icon.id), item.label
                     )
                 },
                 selected = currentDestination?.route == item.route::class.qualifiedName,
