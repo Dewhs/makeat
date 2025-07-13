@@ -43,7 +43,7 @@ android {
 dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
-    implementation("io.github.stoyan-vuchev:squircle-shape:3.0.1")
+    implementation(libs.squircle.shape)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
