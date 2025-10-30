@@ -10,6 +10,7 @@ The aim of **Makeat** is to enable us to easily and intuitively manage our recip
 - [API - Adonis](#api-adonis)
 - [Android - Kotlin](#android-kotlin)
 - [[Soon] iOS - Swift](#ios-swift)
+- [[Soon] Web UI](#web-ui)
 
 ## API (Adonis)
 
@@ -17,3 +18,4 @@ The aim of **Makeat** is to enable us to easily and intuitively manage our recip
 
 ## iOS (Swift)
 
+## Web UI
